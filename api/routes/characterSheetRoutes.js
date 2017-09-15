@@ -5,7 +5,7 @@ module.exports = function(app) {
   // characterSheet Routes
   app.route('/sheets')
     .get(characterSheet.list_all_sheets)
-    .post(characterSheet.create_a_sheets);
+    //.post(characterSheet.create_a_sheets);
 
 
   app.route('/sheets/:sheetsId')

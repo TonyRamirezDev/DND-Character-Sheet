@@ -2,7 +2,7 @@ var express = require('express'),
 app = express(),
 port = process.env.PORT || 3000,
 mongoose = require('mongoose'),
-Sheet = require('./api/models/characterSheetModel'), //created model loading here
+Sheet = require('./api/models/characterSheetModel.js'), //created model loading here
 bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/characterSheetRoutes'); //importing route
+var routes = require('./api/routes/characterSheetRoutes.js'); //importing route
 routes(app); //register the route
 
 
