@@ -1,0 +1,28 @@
+{
+  "name": "dnd_character_sheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyRamirezDev/DND-Character-Sheet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonyRamirezDev/DND-Character-Sheet/issues"
+  },
+  "homepage": "https://github.com/TonyRamirezDev/DND-Character-Sheet#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11"
+  }
+}
