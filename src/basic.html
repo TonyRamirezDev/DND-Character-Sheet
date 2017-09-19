@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+<!-- TO-DO: Change form to send data to server once that is set up -->
 <!-- form action="/server location" method="GET" -->
 <form>
-Character Name:
-<input type="text" name="charactername"><br>
+<id="charName"> Character Name:
+<input type="text" name="charactername"></id><br>
+
 Player Name:
 <input type="text" name="playername"><br>
+
+Race: 
+<select>
+<option value="Human">Human</option>
+<option value="Half-Elf">Half-Elf</option>
+<option value="Elf">Elf</option>
+<option value="Halfling">Halfling</option>
+<option value="Dwarf">Dwarf</option>
+<option value="Dragonborn">Dragonborn</option>
+<option value="Half-Orc">Half-Orc</option>
+<option value="Tiefling">Tiefling</option>
+</select><br>
+
 Class: 
 <select>
 <option value="Barbarian">Barbarian</option>
@@ -22,8 +37,11 @@ Class:
 <option value="Warlock">Warlock</option>
 <option value="Wizard">Wizard</option>
 </select>
+<br>
+Level:
+<input type="number" min="1" max="20"><br>
 
-<br><input type="submit" value="Submit">
+<br><input type="reset" value="Reset"><input type="submit" value="Submit">
 </form>
 
 </body>
