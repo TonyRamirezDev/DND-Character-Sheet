@@ -8,7 +8,10 @@ var SheetSchema = new Schema({
     type: String,
     required: 'Kindly enter the name of the character'
   },
-
+  Created_date: {
+    type: Date,
+    default: Date.now
+  },
   status: {
     type: [{
       type: String,
