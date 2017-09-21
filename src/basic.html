@@ -1,48 +1,89 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="basic.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
 <body>
-<!-- TO-DO: Change form to send data to server once that is set up -->
-<!-- form action="/server location" method="GET" -->
-<form>
-<id="charName"> Character Name:
-<input type="text" name="charactername"></id><br>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="basic.html"><img id="tavern_image" src="https://vignette3.wikia.nocookie.net/hiddenchronicles/images/0/02/Freeitem_Tavern-icon.png/revision/latest?cb=20120919073730" alt="Tavern Image">Traveler's Tavern</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="basic.html">Home</a></li>
+                    <li><a href="basic_old.html">Old</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+            </div>
+        </nav>
 
-Player Name:
-<input type="text" name="playername"><br>
-
-Race: 
-<select>
-<option value="Human">Human</option>
-<option value="Half-Elf">Half-Elf</option>
-<option value="Elf">Elf</option>
-<option value="Halfling">Halfling</option>
-<option value="Dwarf">Dwarf</option>
-<option value="Dragonborn">Dragonborn</option>
-<option value="Half-Orc">Half-Orc</option>
-<option value="Tiefling">Tiefling</option>
-</select><br>
-
-Class: 
-<select>
-<option value="Barbarian">Barbarian</option>
-<option value="Bard">Bard</option>
-<option value="Cleric">Cleric</option>
-<option value="Druid">Druid</option>
-<option value="Fighter">Fighter</option>
-<option value="Monk">Monk</option>
-<option value="Paladin">Paladin</option>
-<option value="Ranger">Ranger</option>
-<option value="Rogue">Rogue</option>
-<option value="Sorcerer">Sorcerer</option>
-<option value="Warlock">Warlock</option>
-<option value="Wizard">Wizard</option>
-</select>
-<br>
-Level:
-<input type="number" min="1" max="20"><br>
-
-<br><input type="reset" value="Reset"><input type="submit" value="Submit">
-</form>
-
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="characterName">Character Name:</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="characterName" placeholder="Enter Character Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Player Name">Player Name:</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="Player Name" placeholder="Enter Player Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <div class="select">
+                    <label for="Race">Race:</label>                    
+                    <select>
+                        <option value="Human">Human</option>
+                        <option value="Half-Elf">Half-Elf</option>
+                        <option value="Elf">Elf</option>
+                        <option value="Halfling">Halfling</option>
+                        <option value="Dwarf">Dwarf</option>
+                        <option value="Dragonborn">Dragonborn</option>
+                        <option value="Half-Orc">Half-Orc</option>
+                        <option value="Tiefling">Tiefling</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <div class="Class">
+                    <label for="Class">Class:</label>                    
+                    <select>
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>  
+    </div>
 </body>
 </html>

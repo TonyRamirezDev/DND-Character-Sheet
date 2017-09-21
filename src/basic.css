@@ -1,0 +1,26 @@
+body {
+    background-color: #424242;
+}
+
+.form-group {
+    color: #009688;
+    padding-top: 20px;
+}
+
+.navbar {
+    border: 3px solid red;
+    border-radius: 10px; 
+
+}
+
+#tavern_image {
+    width: 75px;
+    height: 75px;
+}
+
+li {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    align-content: center;
+}
+
