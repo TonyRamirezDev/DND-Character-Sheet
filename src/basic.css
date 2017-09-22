@@ -8,9 +8,23 @@ body {
 }
 
 .navbar {
-    border: 3px solid red;
     border-radius: 10px; 
+    background-color: #009688;
+    overflow: hidden;
+    padding-top: 5px;
+}
 
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 35px;
+    font-size: 15px;
+}
+
+.navbar a.active {
+    background-color: #02534B; 
 }
 
 #tavern_image {
@@ -18,9 +32,5 @@ body {
     height: 75px;
 }
 
-li {
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center;
-    align-content: center;
-}
+
 
