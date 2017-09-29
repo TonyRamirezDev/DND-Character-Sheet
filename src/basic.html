@@ -1,85 +1,134 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <link rel="stylesheet" href="basic.css">    
+    <link rel="stylesheet" href="basic.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="basic.js"></script>-->
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="navbar" id="myNavbar">
-                <a class="navbar-brand" href="basic.html"><img id="tavern_image" src="https://vignette3.wikia.nocookie.net/hiddenchronicles/images/0/02/Freeitem_Tavern-icon.png/revision/latest?cb=20120919073730" alt="Tavern Image">Traveler's Tavern</a>                        
-                <a class="active" href="basic.html">Basics</a>
-                <a href="#news">Abilities</a>
-                <a href="#contact">Background</a>
+                <a class="navbar-brand" href="basic.html"><img id="tavern_image" src="https://vignette3.wikia.nocookie.net/hiddenchronicles/images/0/02/Freeitem_Tavern-icon.png/revision/latest?cb=20120919073730" alt="Tavern Image">Traveler's Tavern</a>
+                <a class="active" href="basic.html">Build</a>
+                <a href="abilities.html">Character List</a>
                 <a href="#about">Spells</a>
-                </div> 
+            </div>
         </nav>
 
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="characterName">Character Name:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="characterName" placeholder="Enter Character Name">
+        <div class="page">
+            <div class="form-group row">
+
+                <div class="col-xs-12 col-sm-4" id="Name">
+                    <div class="header">
+                        <label>Name</label>
+                    </div>
+                    <div class="content">
+                        <div class="control-group">
+                            <input class="input-lg form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2" id="Height">
+                    <div class="header">
+                        <label>Height</label>
+                    </div>
+                    <div class="content">
+                        <div class="control-group">
+                            <input class="input-lg form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2" id="Weight">
+                    <div class="header">
+                        <label>Weight</label>
+                    </div>
+                    <div class="content">
+                        <div class="control-group">
+                            <input class="input-lg form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3" id="Gender">
+                    <div class="header">
+                        <label>Gender</label>
+                    </div>
+                    <div class="content">
+                        <div class="control-group">
+                            <input class="input-lg form-control">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-5 row-2" id="Race">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="header">
+                            <label for="selRace">Race</label>
+                        </div>
+                        <div class="content">
+                            <select id="selRace" name="selRace">
+                                <option value="choose" id="choose">Choose One</option>
+                                <option value="Human">Human</option>
+                                <option value="HalfElf">Half-Elf</option>
+                                <option value="Elf">Elf</option>
+                                <option value="Halfling">Halfling</option>
+                                <option value="Dwarf">Dwarf</option>
+                                <option value="Dragonborn">Dragonborn</option>
+                                <option value="HalfOrc">Half-Orc</option>
+                                <option value="Tiefling">Tiefling</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="header">
+                            <label for="selSubRace">Sub-Race</label>
+                        </div>
+                        <div class="content">
+                            <select id="selSubRace" name="selSubRace">
+                                <option value="sub" id="sub">Select Race</option>
+                            </select>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="basic.js"></script>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 row-2" id="Class">
+                    <div class="header">
+                        <label>Class</label>
+                    </div>
+                    <div class="content">
+                        <div class="control-group">
+                            <select class="input-lg form-control">
+                                <option value="Barbarian">Barbarian</option>
+                                <option value="Bard">Bard</option>
+                                <option value="Cleric">Cleric</option>
+                                <option value="Druid">Druid</option>
+                                <option value="Fighter">Fighter</option>
+                                <option value="Monk">Monk</option>
+                                <option value="Paladin">Paladin</option>
+                                <option value="Ranger">Ranger</option>
+                                <option value="Rogue">Rogue</option>
+                                <option value="Sorcerer">Sorcerer</option>
+                                <option value="Warlock">Warlock</option>
+                                <option value="Wizard">Wizard</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="Player Name">Player Name:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="Player Name" placeholder="Enter Player Name">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <div class="select">
-                    <label for="Race">Race:</label>                    
-                    <select>
-                        <option value="Human">Human</option>
-                        <option value="Half-Elf">Half-Elf</option>
-                        <option value="Elf">Elf</option>
-                        <option value="Halfling">Halfling</option>
-                        <option value="Dwarf">Dwarf</option>
-                        <option value="Dragonborn">Dragonborn</option>
-                        <option value="Half-Orc">Half-Orc</option>
-                        <option value="Tiefling">Tiefling</option>
-                    </select>
-                </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <div class="Class">
-                    <label for="Class">Class:</label>                    
-                    <select>
-                        <option value="Barbarian">Barbarian</option>
-                        <option value="Bard">Bard</option>
-                        <option value="Cleric">Cleric</option>
-                        <option value="Druid">Druid</option>
-                        <option value="Fighter">Fighter</option>
-                        <option value="Monk">Monk</option>
-                        <option value="Paladin">Paladin</option>
-                        <option value="Ranger">Ranger</option>
-                        <option value="Rogue">Rogue</option>
-                        <option value="Sorcerer">Sorcerer</option>
-                        <option value="Warlock">Warlock</option>
-                        <option value="Wizard">Wizard</option>
-                    </select>
-                </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <button type="reset" class="btn btn-default">Reset</button>
-                <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-            </div>
-        </form>  
+        </div>
     </div>
 </body>
+
 </html>
