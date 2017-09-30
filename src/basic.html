@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="basic.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--<script type="text/javascript" src="basic.js"></script>-->
 </head>
 
 <body>
@@ -100,7 +99,6 @@
                             </select>
                         </div>
                     </div>
-                    <!--<script type="text/javascript" src="basic.js"></script>-->
                 </div>
 
                 <div class="col-xs-12 col-sm-6 row-2" id="Class">
@@ -136,9 +134,42 @@
                             </select>
                         </div>
                     </div>
-                    <script type="text/javascript" src="basic.js"></script>                    
+                                        
                 </div>
-            </div>
+
+                <div class="col-xs-12 col-sm-8 row-3" id="Stats">
+                    <div class="content">
+                        <table class="Stats">
+                            <tr>
+                                <th>Strength</th>
+                                <th>Constitution</th>
+                                <th>Dexterity</th>
+                                <th>Intelligence</th>
+                                <th>Wisdom</th>
+                                <th>Charisma</th>
+                            </tr>
+                            <tr id="Stats">
+                                <td> <input class="statInput" type="number" name="Strength" value="10" id="Strength" min="1" max="20" /> </td>
+                                <td> <input class="statInput" type="number" name="Constitution" value="10" id = "Constitution" min="1" max="20" /> </td>
+                                <td> <input class="statInput" type="number" name="Dexterity" value="10" id="Dexterity" min="1" max="20" /> </td>
+                                <td> <input class="statInput" type="number" name="Intelligence" value="10" id="Intelligence" min="1" max="20" /> </td>
+                                <td> <input class="statInput" type="number" name="Wisdom" value="10" id="Wisdom" min="1" max="20" /> </td>
+                                <td> <input class="statInput" type="number" name="Charisma" value="10" id="Charisma" min="1" max="20" /> </td>                                
+                            </tr>
+                            <tr>
+                                <td class="mod" id="strMod">-</td>
+                                <td class="mod" id="conMod">-</td>
+                                <td class="mod" id="dexMod">-</td>
+                                <td class="mod" id="intMod">-</td>
+                                <td class="mod" id="wisMod">-</td>
+                                <td class="mod" id="chaMod">-</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <script type="text/javascript" src="basic.js"></script>
+            </div>                
+
         </div>
     </div>
 </body>
