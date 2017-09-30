@@ -71,7 +71,7 @@
                 </div>
 
 
-                <div class="col-xs-12 col-sm-5 row-2" id="Race">
+                <div class="col-xs-12 col-sm-6 row-2" id="Race">
                     <div class="col-xs-6 col-sm-3">
                         <div class="header">
                             <label for="selRace">Race</label>
@@ -90,9 +90,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3">
+                    <div class="col-xs-6 col-sm-3 subRace">
                         <div class="header">
-                            <label for="selSubRace">Sub-Race</label>
+                            <label for="selSubRace" id="selSubRaceLabel">Sub-Race</label>
                         </div>
                         <div class="content">
                             <select id="selSubRace" name="selSubRace">
@@ -100,16 +100,17 @@
                             </select>
                         </div>
                     </div>
-                    <script type="text/javascript" src="basic.js"></script>
+                    <!--<script type="text/javascript" src="basic.js"></script>-->
                 </div>
 
-                <div class="col-xs-12 col-sm-3 row-2" id="Class">
-                    <div class="header">
-                        <label>Class</label>
-                    </div>
-                    <div class="content">
-                        <div class="control-group">
-                            <select class="input-lg form-control">
+                <div class="col-xs-12 col-sm-6 row-2" id="Class">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="header">
+                            <label>Class</label>
+                        </div>
+                        <div class="content">
+                            <select id="selClass" name="selClass">
+                                <option value="choose" id="choose">Choose One</option>
                                 <option value="Barbarian">Barbarian</option>
                                 <option value="Bard">Bard</option>
                                 <option value="Cleric">Cleric</option>
@@ -125,6 +126,17 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="header">
+                            <label for="selSubClass" id="selSubClassLabel">Sub-Class</label>
+                        </div>
+                        <div class="content">
+                            <select id="selSubClass" name="selSubClass">
+                                <option>Select Class</option>
+                            </select>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="basic.js"></script>                    
                 </div>
             </div>
         </div>
