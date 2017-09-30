@@ -4,7 +4,6 @@ var raceValue = race.value;
 var subraceValue = subrace.value;
 
 window.onload = function chooseSubRace(){
-    console.log("Hit Function", raceValue);
     var Dwarf = {
         hill: 'Hill Dwarf',
         mountain: 'Mountain Dwarf'
@@ -52,52 +51,40 @@ window.onload = function chooseSubRace(){
     addEventListener('change', choosing);
 
     function choosing() {
-        console.log("Hit Choosing");
         raceValue = race.value;
         if (race.value === 'choose') {
             choose.innerHTML = '<option>Please choose a Race First</option>';
-            console.log("Hit choose IF Statement")
             return;
         }
 
         var races = getRaces(raceValue);
-        console.log("Hit Races: ", races);
-        var options = '<option>Please Choose a Sub-Race</option>';
-        console.log("Hit options");
+        var options = '<option>Please Choose An Option</option>';
         for (var key in races) {
             options += '<option value="' + key + '">' + races[key] + '</option>';
-            sub.innerHTML = options;
-            console.log(options);
+            selSubRace.innerHTML = options;
         }
+        console.log(document.getElementById('selSubRace').value);
     };
 
     function getRaces(raceValue) {
-        console.log("Hit getRaces", raceValue, Dwarf);
+        
         if (raceValue === 'Dwarf') {
             return Dwarf;
-        }
-        else if (raceValue === 'Elf') {
+        } else if (raceValue === 'Elf') {
             return Elf;
-        }
-        else if (raceValue === 'Halfling') {
+        } else if (raceValue === 'Halfling') {
             return Halfling;
-        }
-        else if (selRace === 'Human') {
+        } else if (raceValue === 'Human') {
             return Human;
-        }
-        else if (selRace === 'Dragonborn') {
+        } else if (raceValue === 'Dragonborn') {
             return Dragonborn;
-        }
-        else if (selRace === 'Gnome') {
+        } else if (raceValue === 'Gnome') {
             return Gnome;
-        }
-        else if (selRace === 'HalfElf') {
+        } else if (raceValue === 'HalfElf') {
             return HalfElf;
-        }
-        else if (selRace === 'HalfOrc') {
+        } else if (raceValue === 'HalfOrc') {
             return HalfOrc;
-        }
-        else if (selRace === 'Tiefling') {
+        } else if (raceValue === 'Tiefling') {
             return Tiefling;
         }
     }
