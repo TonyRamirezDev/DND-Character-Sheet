@@ -80,7 +80,6 @@ window.onload = function chooseSubRace(){
             options += '<option value="' + key + '">' + races[key] + '</option>';
             selSubRace.innerHTML = options;
         }
-        console.log(document.getElementById('selSubRace').value);
     };
     function getRaces(raceValue) {
         
@@ -222,8 +221,8 @@ function chooseSubClass(){
     }
 };
 
-stats.addEventListener("input",getMod);
-function getMod() {
+stats.addEventListener("input",getStats);
+function getStats() {
     strValue = str.value;
     conValue = con.value;
     dexValue = dex.value;
@@ -379,9 +378,76 @@ function getMod() {
     document.getElementById("dexMod").innerHTML = dexMod;
     document.getElementById("intMod").innerHTML = intMod; 
     document.getElementById("wisMod").innerHTML = wisMod;
-    document.getElementById("chaMod").innerHTML = chaMod;   
+    document.getElementById("chaMod").innerHTML = chaMod;
 };
 
+subrace.addEventListener('change',getMods);
+function getMods(raceValue){
+    subraceValue = document.getElementById('selSubRace').value;
+    raceValue = document.getElementById('selRace').value;
+    console.log(subraceValue, raceValue);
+    var strRaceMod = 0;
+    var conRaceMod = 0;
+    var dexRaceMod = 0;
+    var wisRaceMod = 0;
+    var intRaceMod = 0;
+    var chaRaceMod = 0;
+    if (raceValue === 'Dwarf'){
+        conRaceMod = 2;
+        if (subraceValue === 'hill'){
+            wisRaceMod = 1;
+        } else if (subraceValue === 'mountain') {
+            strRaceMod = 2;
+        }
+    } else if (raceValue === 'Elf') {
+        dexRaceMod = 2;
+        if (subraceValue === 'high') {
+            intRaceMod = 1;
+        } else if (subraceValue === 'wood') {
+            wisRaceMod = 1;
+        } else if (subraceValue === 'drow') {
+            chaRaceMod = 1;
+        }
+    } else if (raceValue === 'Halfling') {
+        dexRaceMod = 2;
+        if (subraceValue === 'lightfoot') {
+            chaRaceMod = 1;
+        } else if (subraceValue === 'stout') {
+            conRaceMod = 1;
+        }
+    } else if (raceValue === 'Human') {
+        if (subraceValue === 'normal'){
+            strRaceMod = 1;
+            conRaceMod = 1;
+            dexRaceMod = 1;
+            intRaceMod = 1;
+            wisRaceMod = 1;
+            chaRaceMod = 1;
+        }
+    } else if (raceValue === 'Dragonborn') {
+        strRaceMod = 2;
+        chaRaceMod = 1;
+    } else if (raceValue === 'Gnome') {
+        intRaceMod = 2;
+        if (subraceValue === 'forest') {
+            dexRaceMod = 1;
+        } else if (subraceValue === 'rock') {
+            conRaceMod = 1;
+        }
+    } else if (raceValue === 'HalfElf') {
+        chaRaceMod = 2;
+    } else if (raceValue === 'HalfOrc') {
+        strRaceMod = 2;
+        conRaceMod = 1;
+    } else if (raceValue === 'Tiefling') {
+        intRaceMod = 1;
+        chaRaceMod = 2;
+    }
 
-
-
+    document.getElementById("strBonus").innerHTML = strRaceMod;
+    document.getElementById("conBonus").innerHTML = conRaceMod;
+    document.getElementById("dexBonus").innerHTML = dexRaceMod;
+    document.getElementById("intBonus").innerHTML = intRaceMod; 
+    document.getElementById("wisBonus").innerHTML = wisRaceMod;
+    document.getElementById("chaBonus").innerHTML = chaRaceMod;
+};

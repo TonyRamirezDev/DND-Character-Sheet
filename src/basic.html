@@ -140,7 +140,7 @@
                 <div class="col-xs-12 col-sm-8 row-3" id="Stats">
                     <div class="content">
                         <table class="Stats">
-                            <tr>
+                            <tr id="StatLabels">
                                 <th>Strength</th>
                                 <th>Constitution</th>
                                 <th>Dexterity</th>
@@ -164,7 +164,21 @@
                                 <td class="mod" id="wisMod">-</td>
                                 <td class="mod" id="chaMod">-</td>
                             </tr>
+                            <tr>
+                                <td class="bonus" id="strBonus">0</td>
+                                <td class="bonus" id="conBonus">0</td>
+                                <td class="bonus" id="dexBonus">0</td>
+                                <td class="bonus" id="intBonus">0</td>
+                                <td class="bonus" id="wisBonus">0</td>
+                                <td class="bonus" id="chaBonus">0</td>
+                            </tr>
                         </table>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-8 row-4" id="Background">
+                    <div class="header">
+                        <label for="Background"></label>
                     </div>
                 </div>
                 <script type="text/javascript" src="basic.js"></script>
