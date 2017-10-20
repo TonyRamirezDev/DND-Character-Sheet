@@ -14,6 +14,7 @@ var dex = document.getElementById('Dexterity');
 var int = document.getElementById('Intelligence');
 var wis = document.getElementById('Wisdom');
 var cha = document.getElementById('Charisma');
+
 var strMod = document.getElementById('strMod').value;
 var conMod = 0;
 var dexMod = 0;
@@ -229,7 +230,6 @@ function getStats() {
     wisValue = wis.value;
     intValue = int.value;
     chaValue = cha.value;
-
     if (strValue <= 1){
         strMod = -5;
     } else if (strValue == 2 || strValue == 3){
@@ -383,15 +383,14 @@ function getStats() {
 
 subrace.addEventListener('change',getMods);
 function getMods(raceValue){
-    subraceValue = document.getElementById('selSubRace').value;
-    raceValue = document.getElementById('selRace').value;
-    console.log(subraceValue, raceValue);
     var strRaceMod = 0;
     var conRaceMod = 0;
     var dexRaceMod = 0;
     var wisRaceMod = 0;
     var intRaceMod = 0;
     var chaRaceMod = 0;
+    subraceValue = document.getElementById('selSubRace').value;
+    raceValue = document.getElementById('selRace').value;
     if (raceValue === 'Dwarf'){
         conRaceMod = 2;
         if (subraceValue === 'hill'){
@@ -450,4 +449,27 @@ function getMods(raceValue){
     document.getElementById("intBonus").innerHTML = intRaceMod; 
     document.getElementById("wisBonus").innerHTML = wisRaceMod;
     document.getElementById("chaBonus").innerHTML = chaRaceMod;
+};
+
+addEventListener("change",totalStats);
+function totalStats(){
+    var strTotal = 0;
+    var conTotal = 0;
+    var dexTotal = 0;
+    var intTotal = 0;
+    var wisTotal = 0;
+    var chaTotal = 0;
+
+    var strInput = str.value;
+    var conInput = con.value;
+    var dexInput = dex.value;
+    var wisInput = wis.value;
+    var intInput = int.value;
+    var chaInput = cha.value;
+
+    var strRace = document.getElementById("strBonus").value;
+    console.log(strRace);
+
+
+
 };

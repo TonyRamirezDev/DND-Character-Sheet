@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="css/build.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -15,8 +15,8 @@
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="navbar" id="myNavbar">
-                <a class="navbar-brand" href="basic.html"><img id="tavern_image" src="https://vignette3.wikia.nocookie.net/hiddenchronicles/images/0/02/Freeitem_Tavern-icon.png/revision/latest?cb=20120919073730" alt="Tavern Image">Traveler's Tavern</a>
-                <a class="active" href="basic.html">Build</a>
+                <a class="navbar-brand" href="build.html"><img id="tavern_image" src="https://vignette3.wikia.nocookie.net/hiddenchronicles/images/0/02/Freeitem_Tavern-icon.png/revision/latest?cb=20120919073730" alt="Tavern Image">Traveler's Tavern</a>
+                <a class="active" href="build.html">Build</a>
                 <a href="abilities.html">Character List</a>
                 <a href="#about">Spells</a>
             </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="content">
                         <div class="control-group">
-                            <input class="input-lg form-control">
+                            <input type="text" class="input-lg form-control" />
                         </div>
                     </div>
                 </div>
@@ -137,10 +137,11 @@
                                         
                 </div>
 
-                <div class="col-xs-12 col-sm-8 row-3" id="Stats">
+                <div class="col-xs-12 col-sm-12 row-3" id="Stats">
                     <div class="content">
                         <table class="Stats">
                             <tr id="StatLabels">
+                                <td></td>
                                 <th>Strength</th>
                                 <th>Constitution</th>
                                 <th>Dexterity</th>
@@ -149,6 +150,7 @@
                                 <th>Charisma</th>
                             </tr>
                             <tr id="Stats">
+                                <td>Base</td>
                                 <td> <input class="statInput" type="number" name="Strength" value="10" id="Strength" min="1" max="20" /> </td>
                                 <td> <input class="statInput" type="number" name="Constitution" value="10" id = "Constitution" min="1" max="20" /> </td>
                                 <td> <input class="statInput" type="number" name="Dexterity" value="10" id="Dexterity" min="1" max="20" /> </td>
@@ -157,20 +159,31 @@
                                 <td> <input class="statInput" type="number" name="Charisma" value="10" id="Charisma" min="1" max="20" /> </td>                                
                             </tr>
                             <tr>
-                                <td class="mod" id="strMod">-</td>
-                                <td class="mod" id="conMod">-</td>
-                                <td class="mod" id="dexMod">-</td>
-                                <td class="mod" id="intMod">-</td>
-                                <td class="mod" id="wisMod">-</td>
-                                <td class="mod" id="chaMod">-</td>
-                            </tr>
-                            <tr>
+                                <td>Race Bonus</td>
                                 <td class="bonus" id="strBonus">0</td>
                                 <td class="bonus" id="conBonus">0</td>
                                 <td class="bonus" id="dexBonus">0</td>
                                 <td class="bonus" id="intBonus">0</td>
                                 <td class="bonus" id="wisBonus">0</td>
                                 <td class="bonus" id="chaBonus">0</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td class="bonus" id="strTotal">-</td>
+                                <td class="bonus" id="conTotal">-</td>
+                                <td class="bonus" id="dexTotal">-</td>
+                                <td class="bonus" id="intTotal">-</td>
+                                <td class="bonus" id="wisTotal">-</td>
+                                <td class="bonus" id="chaTotal">-</td>
+                            </tr>
+                            <tr>
+                                <td>Modifier</td>
+                                <td class="mod" id="strMod">-</td>
+                                <td class="mod" id="conMod">-</td>
+                                <td class="mod" id="dexMod">-</td>
+                                <td class="mod" id="intMod">-</td>
+                                <td class="mod" id="wisMod">-</td>
+                                <td class="mod" id="chaMod">-</td>
                             </tr>
                         </table>
                     </div>
@@ -181,11 +194,10 @@
                         <label for="Background"></label>
                     </div>
                 </div>
-                <script type="text/javascript" src="basic.js"></script>
             </div>                
-
         </div>
     </div>
+    <script type="text/javascript" src="build.js"></script>    
 </body>
 
 </html>
