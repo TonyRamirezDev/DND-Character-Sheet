@@ -15,13 +15,6 @@ var int = document.getElementById('Intelligence');
 var wis = document.getElementById('Wisdom');
 var cha = document.getElementById('Charisma');
 
-var strMod = document.getElementById('strMod').value;
-var conMod = 0;
-var dexMod = 0;
-var wisMod = 0;
-var intMod = 0;
-var chaMod = 0;
-
 var strRaceMod = 0;
 var conRaceMod = 0;
 var dexRaceMod = 0;
@@ -29,8 +22,16 @@ var wisRaceMod = 0;
 var intRaceMod = 0;
 var chaRaceMod = 0;
 
+var strMod = 0;
+var conMod = 0;
+var dexMod = 0;
+var wisMod = 0;
+var intMod = 0;
+var chaMod = 0;
+
 var stats = document.getElementById('Stats');
 
+//Array of objects for subraces based on the races
 window.onload = function chooseSubRace(){
     var Dwarf = {
         hill: 'Hill Dwarf',
@@ -74,11 +75,12 @@ window.onload = function chooseSubRace(){
     var Tiefling = {
         tiefling: 'Tiefling'
     };
+    //Listen to fill in subraces based on which race is chosen
     race.addEventListener('change', choosing);
     function choosing() {
         raceValue = race.value;
         if (race.value === 'choose') {
-            selSubRace.innerHTML = '<option>Please choose a Race First</option>';
+            selSubRace.innerHTML = '<option>Please Choose A Race First</option>';
             return;
         }
 
@@ -89,6 +91,7 @@ window.onload = function chooseSubRace(){
             selSubRace.innerHTML = options;
         }
     };
+    //race values to fill in for the race dropdown
     function getRaces(raceValue) {
         
         if (raceValue === 'Dwarf') {
@@ -115,6 +118,7 @@ window.onload = function chooseSubRace(){
 
 
 addEventListener("change", chooseSubClass);
+//Array of objects for specialties based on Class
 function chooseSubClass(){
     var Barbarian = {
         berserker: 'Path of the Berserker',
@@ -184,10 +188,11 @@ function chooseSubClass(){
 
     myclass.addEventListener('change', choosingClasses);
 
+    //fill in specialty dropdown based on chosen Class
     function choosingClasses() {
         classValue = myclass.value;
         if (myclass.value === 'choose') {
-            selSubClass.innerHTML = '<option>Please choose a Class First</option>';
+            selSubClass.innerHTML = '<option>Please Choose A Class First</option>';
             return;
         }
 
@@ -229,13 +234,18 @@ function chooseSubClass(){
     }
 };
 
-//stats.addEventListener("input",getStats);
-//getStats previously here
-
-subrace.addEventListener('change',getMods);
-function getMods(raceValue){
+subrace.addEventListener('change',getRaceMods);
+function getRaceMods(raceValue){
+    //reset to 0 for when subrace is changed
+    strRaceMod = 0;
+    conRaceMod = 0;
+    dexRaceMod = 0;
+    wisRaceMod = 0;
+    intRaceMod = 0;
+    chaRaceMod = 0;
     subraceValue = document.getElementById('selSubRace').value;
     raceValue = document.getElementById('selRace').value;
+    //change mods based on the chosen race
     if (raceValue === 'Dwarf'){
         conRaceMod = 2;
         if (subraceValue === 'hill'){
@@ -294,24 +304,10 @@ function getMods(raceValue){
     document.getElementById("intBonus").innerHTML = intRaceMod; 
     document.getElementById("wisBonus").innerHTML = wisRaceMod;
     document.getElementById("chaBonus").innerHTML = chaRaceMod;
-
-    return strRaceMod;
-    return conRaceMod;
-    return dexRaceMod;
-    return intRaceMod;
-    return wisRaceMod;
-    return chaRaceMod;
 };
 
 addEventListener("change",totalStats);
 function totalStats(){
-    var strTotal = 0;
-    var conTotal = 0;
-    var dexTotal = 0;
-    var intTotal = 0;
-    var wisTotal = 0;
-    var chaTotal = 0;
-
     var strInput = parseInt(str.value);
     var conInput = parseInt(con.value);
     var dexInput = parseInt(dex.value);
@@ -319,55 +315,78 @@ function totalStats(){
     var intInput = parseInt(int.value);
     var chaInput = parseInt(cha.value);
 
-    strTotal = strInput + strRaceMod;
+    let strTotal = strInput + strRaceMod;
     document.getElementById("strTotal").innerHTML = strTotal;
 
-    conTotal = conInput + conRaceMod;
+    let conTotal = conInput + conRaceMod;
     document.getElementById("conTotal").innerHTML = conTotal;
 
-    dexTotal = dexInput + dexRaceMod;
+    let dexTotal = dexInput + dexRaceMod;
     document.getElementById("dexTotal").innerHTML = dexTotal;
 
-    wisTotal = wisInput + wisRaceMod;
+    let wisTotal = wisInput + wisRaceMod;
     document.getElementById("wisTotal").innerHTML = wisTotal;
 
-    intTotal = intInput + intRaceMod;
+    let intTotal = intInput + intRaceMod;
     document.getElementById("intTotal").innerHTML = intTotal;
 
-    chaTotal = chaInput + chaRaceMod;
+    let chaTotal = chaInput + chaRaceMod;
     document.getElementById("chaTotal").innerHTML = chaTotal;
-    if (chaTotal == 20){
 
-    }
-
-    getStats();
+    console.log("Inside total", strTotal);
+    getMods();
 };
 
-function getStats() {
-    console.log(strTotal);
+function getMods() {    
+    console.log("Get Stats Called", strMod);
     if (strTotal <= 1){
         strMod = -5;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 2 || strTotal == 3){
         strMod = -4;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 4 || strTotal == 5){
         strMod = -3;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 6 || strTotal == 7){
         strMod = -2;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 8 || strTotal == 9){
         strMod = -1;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 10 || strTotal == 11){
         strMod = 0;
+        document.getElementById("strMod").innerHTML = strMod;
+        console.log("After strTotal ", strMod);
+        return strMod;
     } else if (strTotal == 12 || strTotal == 13){
         strMod = 1;
+        document.getElementById("strMod").innerHTML = strMod;
+        console.log("After strTotal ", strMod);
+        return strMod;
     } else if (strTotal == 14 || strTotal == 15){
         strMod = 2;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 16 || strTotal == 17){
         strMod = 3;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal == 18 || strTotal == 19){
         strMod = 4;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     } else if (strTotal >= 20){
         strMod = 5;
+        document.getElementById("strMod").innerHTML = strMod;
+        return strMod;
     }
+
 
     // if (conValue <= 1){
     //     conMod = -5;
@@ -488,7 +507,7 @@ function getStats() {
     //     chaMod = 5;
     // }    
 
-    document.getElementById("strMod").innerHTML = strMod;
+    // document.getElementById("strMod").innerHTML = strMod;
     // document.getElementById("conMod").innerHTML = conMod;
     // document.getElementById("dexMod").innerHTML = dexMod;
     // document.getElementById("intMod").innerHTML = intMod; 
